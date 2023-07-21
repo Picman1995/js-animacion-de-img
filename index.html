@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas width="600" height="600" id="raton"></canvas>
+        <script type='text/javascript'>
+            var cnv, ctx, pos_x = 0, img;
+            function anim() {
+                ctx.clearRect(0,0,600,600);
+                ctx.drawImage(img, pos_x, 0);
+                pos_x += 1;
+                setTimeout (anim, 50);
+            }
+            window.onload = function(){
+                img = new Image();
+                img.src = 'yacare.jpg';
+                cnv = document.getElementById('raton');
+                ctx = cnv.getContext('2d')
+                anim();
+            };
+        </script>
+    </body>
+
+</html>
